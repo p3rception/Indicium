@@ -23,7 +23,8 @@ def is_power_connected():
 # The main loop continuously checks the battery level and sends notifications based on the battery status
 while True:
     battery_level = check_battery()
-    print("The battery level is", battery_level, "%")
+    timestamp = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+    print(f"[{timestamp}] The battery level is {battery_level}%")
     if battery_level <= 20:
         os.system(
             "osascript -e 'display notification \"Battery Level Below 20%\nCharge the device!\" with title \"Battery Status\"'")
