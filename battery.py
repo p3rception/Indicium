@@ -21,6 +21,7 @@ def is_power_connected():
     """
     power_status = subprocess.check_output(
         "pmset -g ps", shell=True).decode("utf-8").strip()
+
     if "AC Power" in power_status:
         return True
     else:
@@ -34,8 +35,8 @@ while True:
     print(f"[{timestamp}] The battery level is {battery_level}%")
     if battery_level <= LOW_BATTERY_THRESHOLD and not is_power_connected():
         os.system(
-            "osascript -e 'display notification \"Battery Level Below 20%\nCharge the device!\" with title \"Battery Status\"'")
+            "osascript -e 'display notification \"Battery Level Below 20%\nCharge the device!\" with title \"Battery Status\" sound name \"Submarine\"'")
     elif battery_level >= HIGH_BATTERY_THRESHOLD and is_power_connected():
         os.system(
-            "osascript -e 'display notification \"Battery Level Above 80%\nUnplug the device!\" with title \"Battery Status\"'")
-    time.sleep(600)  # Checks every 10 minutes
+            "osascript -e 'display notification \"Battery Level Above 80%\nUnplug the device!\" with title \"Battery Status\" sound name \"Submarine\"'")
+    time.sleep(300)  # Checks every 5 minutes
