@@ -32,7 +32,7 @@ def is_power_connected():
 while True:
     battery_level = check_battery()
 
-    timestamp = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+    timestamp = time.strftime("%H:%M", time.localtime())
     print(f"[{timestamp}] The battery level is {battery_level}%")
 
     if battery_level <= LOW_BATTERY_THRESHOLD and not is_power_connected():
