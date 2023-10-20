@@ -190,6 +190,7 @@ pyrightconfig.json
 .ionide
 
 # Others
+**/test*
 *.sh
 *.png
 *.txt
