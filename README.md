@@ -16,7 +16,7 @@ To use this script, follow these steps:
 
 ## (Optional)
 
-To run this script on startup, you can create a `indicium.sh` file with the following content and add it to the Login Items:
+To run this script on startup, you can create an `indicium.sh` file with the following content and add it to the Login Items:
 
 ```bash
 #!/bin/bash
